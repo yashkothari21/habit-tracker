@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from api import views, schemas
+from src.api import views, schemas
 
 router = APIRouter()
 

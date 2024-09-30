@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from api.routers import habit_router
-from core.db import init_db, init, close
+from src.api.routers import habit_router
+from src.core.db import init_db, init, close
 
 app = FastAPI()
 
@@ -15,4 +15,4 @@ async def startup_event():
 async def shutdown_event():
     await close()
 
-app.include_router(habit_router.router, prefix="/api")
+app.include_router(habit_router.router, prefix="/api/v1")

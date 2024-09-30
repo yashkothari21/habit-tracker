@@ -1,6 +1,6 @@
 from fastapi import HTTPException
 from src.core.models import Habit, HabitProgress
-from api.schemas import HabitCreate, HabitProgressCreate
+from src.api.schemas import HabitCreate, HabitProgressCreate
 
 
 async def list_habits():

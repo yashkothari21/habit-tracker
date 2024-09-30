@@ -1,3 +1,4 @@
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict
 from datetime import date
 
@@ -9,7 +10,7 @@ class Habit(BaseModel):
     id: int
     name: str
     description: str
-    created_at: str
+    created_at: datetime
 
     model_config = ConfigDict(from_attributes=True)
 
