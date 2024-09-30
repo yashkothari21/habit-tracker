@@ -1,0 +1,39 @@
+# Python files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.env
+
+# SQLite database file
+*.db
+*.sqlite3
+
+# Virtual environment
+venv/
+.venv/
+
+# Alembic migration files
+migrations/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# VSCode settings
+.vscode/
+.idea/
+
+# Docker
+*.log
+*.pid
+*.sock
+*.lock
+*.tmp
+
+# Pytest
+.cache/
+.coverage
+htmlcov/
+
+# macOS
+.DS_Store
