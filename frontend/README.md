@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frontend - Habit Tracker Application
 
-## Getting Started
+## Project Overview
 
-First, run the development server:
+The frontend is a React application (using TypeScript) that provides a user interface for managing habits. Users can add, edit, delete, and view their habits. The project is built using **Next.js** and styled with **Tailwind CSS** for responsive design.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Project Structure
+
+```
+app
+├── globals.css
+├── habits
+│   ├── components
+│   │   ├── HabitForm.tsx
+│   │   ├── HabitList.tsx
+│   │   └── ProgressForm.tsx
+│   └── page.tsx
+├── layout.tsx
+├── components
+│   └── Modal.tsx
+├── Dockerfile
+├── next.config.mjs
+├── next-env.d.ts
+├── package.json
+├── package-lock.json
+├── pages
+│   └── _app.tsx
+├── postcss.config.mjs
+├── README.md
+├── styles
+│   └── globals.css
+├── tailwind.config.ts
+└── tsconfig.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Explanation of Key Directories:
+- **habits/components**: Contains reusable components related to habit management (`HabitForm`, `HabitList`, `ProgressForm`).
+- **components**: Includes shared components like `Modal`.
+- **styles**: Global CSS styles are defined in `globals.css`.
+- **Dockerfile**: Docker configuration for containerization.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Setup and Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prerequisites
 
-## Learn More
+Ensure you have **Node.js** and **Docker** installed on your machine.
 
-To learn more about Next.js, take a look at the following resources:
+### Steps:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone the Repository:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   git clone https://github.com/yashkothari21/habit-tracker
+   cd frontend
+   ```
 
-## Deploy on Vercel
+2. **Install Dependencies:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   npm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Running the Application
+
+### Option 1: Using Docker
+
+1. **Build Docker Image:**
+
+   ```bash
+   docker build -t habit-tracker-frontend .
+   ```
+
+2. **Run the Application in Docker:**
+
+   ```bash
+   docker run -p 3000:3000 habit-tracker-frontend
+   ```
+
+3. **Access the Application:**
+
+   Open `http://localhost:3000` in your web browser.
+
+### Option 2: Local Development
+
+1. **Start the Application Locally:**
+
+   ```bash
+   npm run dev
+   ```
+
+2. **Access the Application:**
+
+   Open `http://localhost:3000/habits` in your web browser.
+
+## Configuration
+
+### API Integration
+
+- The frontend communicates with the backend through API calls. The API URL should be configured in your components or service files where the API is called. Ensure you use an environment variable or configuration file to set your backend URL correctly.
+
+### Tailwind CSS Configuration
+
+- You can customize Tailwind CSS styles in the `tailwind.config.ts` file. This file allows you to extend or override default Tailwind settings.
+
+## Troubleshooting
+
+- **CORS Issues:** Ensure that the backend CORS settings allow requests from the frontend URL (`http://localhost:3000`).
+- **TypeScript Errors:** Ensure that all required types are defined correctly in your TypeScript files.
+- **Build Errors:** If using Docker, confirm that the Dockerfile is set up correctly and that all dependencies are installed.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
